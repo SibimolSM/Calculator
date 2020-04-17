@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <style>
+            input[type="button"] {
+                width: 80px;
+                height: 50px;
+            }
+            input#displayoutput {
+                height: 50px;
+                width: 247px;
+            }
+            td {
+                padding: 1px;
+                margin: 0px;
+            }
+            .calcbody{
+                background-image: url(maram1.jpeg);
+                background-size: cover;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                height: 100vh;
+            }
+            table {
+                padding-left: 437px;
+                padding-top: 200px;
+            }
+        </style>
+    </head>
+    <body>
+     <div class="calcbody">
+         <table>
+             <tbody>
+                <tr>  
+                    <td colspan="3"> <input type="text" id="displayoutput"/></td>
+                    <td><input type="button" value="clear" onclick="clearMe();"/></td>
+                </tr>  
+                    
+                <tr>
+                    <td><input type="button" value="1" onclick="getInput('1');"/></td>
+                    <td><input type="button" value="2" onclick="getInput('2');"/></td>
+                    <td><input type="button" value="3" onclick="getInput('3');"/></td>
+                    <td><input type="button" value="/" onclick="getInput('/');"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="getInput('4');"/></td>
+                    <td><input type="button" value="5" onclick="getInput('5');"/></td>
+                    <td><input type="button" value="6" onclick="getInput('6');"/></td>
+                    <td><input type="button" value="-" onclick="getInput('-');"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="getInput('7');"/></td>
+                    <td><input type="button" value="8" onclick="getInput('8');"/></td>
+                    <td><input type="button" value="9" onclick="getInput('9');"/></td>
+                    <td><input type="button" value="+" onclick="getInput('+');"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="." onclick="getInput('.');"/></td>
+                    <td><input type="button" value="0" onclick="getInput('0');"/></td>
+                    <td><input type="button" value="=" onclick="solveIt();"/></td>
+                    <td><input type="button" value="*" onclick="getInput('*');"/></td>
+                 </tr>
+             </tbody>
+         </table>
+     </div>   
+
+     <script>
+     function getInput(input){
+        document.getElementById('displayoutput').value += input;
+     }
+     function solveIt(){
+       let valInput = document.getElementById('displayoutput').value;
+       document.getElementById('displayoutput').value = eval(valInput);
+     }
+     function clearMe(){
+        document.getElementById('displayoutput').value = "";
+     }
+     </script>
+    </body>
+</html>
